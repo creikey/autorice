@@ -1,0 +1,10 @@
+* If the system is going to dual boot Windows, install Windows first.
+* In windows, make sure to shrink its partition to allow arch partitions
+* Disable secure boot before booting arch linux
+* For detailed help with windows go to https://bit.ly/2TjF8ni
+
+1. Create EFI partition
+2. Create extended partition
+3. Add 32 gigabyte root partition then add partition with rest of space for home partition
+4. Make both partitions with `mkfs.ext4`
+5. Make efi partition with `mkfs.fat -F32`
