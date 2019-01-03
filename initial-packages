@@ -1,6 +1,7 @@
 base-devel
 zsh
 zsh-completions
+sudo
 i3
 ttf-inconsolata
 ttf-linux-libertine
