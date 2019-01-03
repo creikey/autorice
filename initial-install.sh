@@ -117,19 +117,8 @@ mount "$HOMEFS_PART" /mnt/home
 mkdir -p /boot
 mount "$EFI_PART" /boot
 
-log "Getting initial packages..."
-while IFS='' read -r line || [[ -n "$line" ]]; do
-	if [ -z "$PCKGS" ]; then
-		PCKGS="$PCKGS $line"
-	else
-		export PCKGS="$line"
-	fi
-done < "initial-packages"
-
-log "Packages: $PCKGS"
-
 log "Pacstrapping..."
-pacstrap /mnt base "$PCKGS"
+pacstrap /mnt base base-devel
 
 log "Generating fstab..."
 genfstab -U /mnt >> /mnt/etc/fstab
