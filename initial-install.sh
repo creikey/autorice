@@ -123,10 +123,7 @@ pacstrap /mnt base base-devel
 log "Generating fstab..."
 genfstab -U /mnt >> /mnt/etc/fstab
 
-log "Installing install.sh..."
-cp install.sh /mnt/root/
-
-log "Installing auxilliary files..."
+log "Installing files..."
 cp * /mnt/root/
 
 log "Chrooting and running install.sh..."

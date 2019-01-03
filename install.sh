@@ -10,15 +10,15 @@ pacman --noconfirm -Syyu
 log "Getting initial packages..."
 while IFS='' read -r line || [[ -n "$line" ]]; do
 	if [ -z "$PCKGS" ]; then
-		PCKGS="$PCKGS $line"
-	else
 		export PCKGS="$line"
+	else
+		PCKGS="$PCKGS $line"
 	fi
 done < "initial-packages"
 
-#log "Packages: $PCKGS"
+log "Packages: $PCKGS"
 log "Installing initial packages..."
-pacman -S "$PCKGS"
+pacman --noconfirm -S $PCKGS
 
 log "Setting time zone..."
 ln -sf /usr/share/zoneinfo/US/Pacific /etc/localtime
