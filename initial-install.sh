@@ -114,8 +114,8 @@ mkdir -p /mnt
 mount "$ROOTFS_PART" /mnt
 mkdir -p /mnt/home
 mount "$HOMEFS_PART" /mnt/home
-mkdir -p /efi
-mount "$EFI_PART" /efi
+mkdir -p /mnt/efi
+mount "$EFI_PART" /mnt/efi
 
 log "Pacstrapping..."
 pacstrap /mnt base base-devel
