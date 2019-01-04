@@ -114,7 +114,7 @@ mkdir -p /mnt
 mount "$ROOTFS_PART" /mnt
 mkdir -p /mnt/home
 mount "$HOMEFS_PART" /mnt/home
-mkdir -p /boot
+mkdir -p /efi
 mount "$EFI_PART" /efi
 
 log "Pacstrapping..."
