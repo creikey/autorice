@@ -2,6 +2,7 @@ zsh
 zsh-completions
 sudo
 i3
+git
 xcompmgr
 dosfstools
 feh

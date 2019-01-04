@@ -51,7 +51,19 @@ log "Setting up user..."
 useradd --create-home "$USERNAME"
 usermod -a -G wheel "$USERNAME"
 printf "$USERNAME:$USERPASSWORD" | chpasswd
-echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
+
+log "Giving user easy sudo for installing yay..."
+printf "\n%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+log "Copying over yay install script..."
+cp yayinstall.sh /home/"$USERNAME"
+
+log "Installing yay..."
+sudo -u "$USERNAME" /home/"$USERNAME"/yayinstall.sh
+
+log "Making sudo require password for user..."
+sed -i '$ d' foo.txt
+printf "%wheel ALL=(ALL) ALL" >> /etc/sudoers
 
 log "$GREEN""Finished installing! Remember to run grub-install based on the current config before rebooting"
 
