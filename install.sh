@@ -40,8 +40,8 @@ printf "127.0.1.1   $HOSTNAME.localdomain  $HOSTNAME\n" >> /etc/hosts
 log "Setting root password..."
 printf "root:$ROOTPASSWORD" | chpasswd
 
-log "Installing grub package..."
-pacman -S --noconfirm grub
+log "Installing grub packages..."
+pacman -S --noconfirm grub efibootmgr
 
 log "Setting up user..."
 #useradd -m -g wheel -s /bin/bash "$USERNAME"
