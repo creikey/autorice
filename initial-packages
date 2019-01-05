@@ -3,7 +3,6 @@ zsh-completions
 sudo
 i3
 git
-xcompmgr
 dosfstools
 feh
 ffmpeg
@@ -25,4 +24,13 @@ zip
 youtube-dl
 zathura
 fzf
-xorg-xbacklight
+xorg
+xorg-server
+dialog
+wpa_actiond
+ifplugd
+dmenu
+xorg-init
+kitty
+noto-fonts-emoji
+noto-fonts-cjk
