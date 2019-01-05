@@ -56,10 +56,10 @@ log "Giving user easy sudo for installing yay..."
 printf "%%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 log "Copying over yay install script..."
-cp yayinstall.sh /home/"$USERNAME"
+cp aurinstall.sh /home/"$USERNAME"
 
 log "Installing yay..."
-sudo -u "$USERNAME" /home/"$USERNAME"/yayinstall.sh
+sudo -u "$USERNAME" /home/"$USERNAME"/aurinstall.sh
 
 log "Making sudo require password for user..."
 sed -i '$ d' /etc/sudoers
